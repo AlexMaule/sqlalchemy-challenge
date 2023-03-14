@@ -109,7 +109,8 @@ def home():
 
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-    return jsonify(sorted_precp_df)
+    precip = precp_df.to_dict(orient = 'dict')
+    return jsonify(precip)
 
 @app.route("/api/v1.0/stations")
 def stations():
